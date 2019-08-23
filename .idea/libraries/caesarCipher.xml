@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="caesarCipher">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/caesarCipher.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
