@@ -7,7 +7,7 @@ public class cipher {
     private JButton quit;
 
     public cipher() {
-        JOptionPane.showMessageDialog(null, "No numbers and all punctuation is lost");
+        JOptionPane.showMessageDialog(null, "All punctuation will be removed and numbers are not encrypted");
 
         encrypt.addActionListener(actionEvent -> {
             String in = JOptionPane.showInputDialog("Please enter your text here");
@@ -19,6 +19,9 @@ public class cipher {
                 char ch = (char) (int) in.charAt(i);
                 if (Character.isWhitespace(in.charAt(i))) {
                     ch = ' ';                 //keeps space from initial text
+                    encrypted.append(ch);
+                } else if (Character.isDigit(in.charAt(i))) {
+                    ch = in.charAt(i);
                     encrypted.append(ch);
                 } else if (Character.isUpperCase(in.charAt(i))) {
                     ch = (char) ((ch + shifty - 65) % 26 + 65);    //keeps uppercase when cipher is complete
@@ -41,7 +44,10 @@ public class cipher {
             for (int i = 0; i < encrypted.length(); i++) {
                 char ch = encrypted.charAt(i);
                 if (!Character.isWhitespace(ch)) {
-                    if (Character.isUpperCase(ch)) {
+                    if (Character.isDigit(ch)) {
+
+                        decrypted.append(ch);
+                    } else if (Character.isUpperCase(ch)) {
                         int temp = (ch - shifty - 65) % 26;
                         if (temp < 0) {
                             temp += 26;
