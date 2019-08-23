@@ -1,13 +1,14 @@
 import javax.swing.*;
 
-
 public class cipher {
     private JButton encrypt;
     private JButton decrypt;
     private JPanel panelMain;
+    private JButton quit;
 
     public cipher() {
         JOptionPane.showMessageDialog(null, "No numbers and all punctuation is lost");
+
         encrypt.addActionListener(actionEvent -> {
             String in = JOptionPane.showInputDialog("Please enter your text here");
             String shift = JOptionPane.showInputDialog("Please Enter an encryption number here");
@@ -27,9 +28,9 @@ public class cipher {
                     encrypted.append(ch);
                 }
             }
-
             JOptionPane.showMessageDialog(null, encrypted.toString());
         });
+
         decrypt.addActionListener(actionEvent -> {
             String in = JOptionPane.showInputDialog("Please enter encrypted text here");
             String shift = JOptionPane.showInputDialog("Please Enter the decryption number here");
@@ -39,7 +40,6 @@ public class cipher {
             StringBuilder decrypted = new StringBuilder();
             for (int i = 0; i < encrypted.length(); i++) {
                 char ch = encrypted.charAt(i);
-
                 if (!Character.isWhitespace(ch)) {
                     if (Character.isUpperCase(ch)) {
                         int temp = (ch - shifty - 65) % 26;
@@ -61,9 +61,8 @@ public class cipher {
                 }
             }
             JOptionPane.showMessageDialog(null, decrypted.toString());
-
-
         });
+        quit.addActionListener(actionEvent -> System.exit(0));
     }
 
     public static void main(String[] args) {
