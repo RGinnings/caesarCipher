@@ -31,7 +31,11 @@ public class cipher {
                     encrypted.append(ch);
                 }
             }
-            JOptionPane.showMessageDialog(null, encrypted.toString());
+            JEditorPane e = new JEditorPane();
+            e.setText(encrypted.toString());
+            e.setEnabled(true);
+            e.setVisible(true);
+            JOptionPane.showMessageDialog(null, e,"Encrypted Message",JOptionPane.DEFAULT_OPTION);
         });
 
         decrypt.addActionListener(actionEvent -> {
@@ -66,7 +70,11 @@ public class cipher {
                     decrypted.append(ch);
                 }
             }
-            JOptionPane.showMessageDialog(null, decrypted.toString());
+            JEditorPane d = new JEditorPane();
+            d.setText(decrypted.toString());
+            d.setEnabled(true);
+            d.setVisible(true);
+            JOptionPane.showMessageDialog(null, d,"Decrypted Message",JOptionPane.DEFAULT_OPTION);
         });
         quit.addActionListener(actionEvent -> System.exit(0));
     }
