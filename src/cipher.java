@@ -19,7 +19,7 @@ public class cipher {
     }
 
     private void testForButton() {
-        boolean value = !num.getText().trim().isEmpty() && !message.getText().trim().isEmpty();
+        boolean value = !num.getText().trim().isEmpty() && !message.getText().trim().isEmpty() && num.getText().matches("[0-9]+");
         encrypt.setEnabled(value);
         decrypt.setEnabled(value);
     }

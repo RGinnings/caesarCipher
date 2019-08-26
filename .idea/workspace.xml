@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f9b1fd0-cd75-48ae-85e8-0ff5fef59d19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/caesarCipher/cipher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/caesarCipher/cipher$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/caesarCipher/cipher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/caesarCipher/cipher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cipher.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/cipher.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cipher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cipher.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
