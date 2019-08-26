@@ -50,7 +50,7 @@ public class cipher {
         encrypt.addActionListener(actionEvent -> {
             String in = message.getText();
             int shifty = Integer.parseInt(num.getText());
-            in = in.replaceAll("\\p{Punct}", "");
+            //in = in.replaceAll("\\p{Punct}", "");
             StringBuilder encrypted = new StringBuilder();
             for (int i = 0; i < in.length(); i++) {
                 char ch = (char) (int) in.charAt(i);
@@ -63,8 +63,11 @@ public class cipher {
                 } else if (Character.isUpperCase(in.charAt(i))) {
                     ch = (char) ((ch + shifty - 65) % 26 + 65);    //keeps uppercase when cipher is complete
                     encrypted.append(ch);
-                } else {
+                } else if (Character.isLowerCase(in.charAt(i))){
                     ch = (char) ((ch + shifty - 97) % 26 + 97);    //lowercase cipher
+                    encrypted.append(ch);
+                } else {
+                    ch = in.charAt(i);
                     encrypted.append(ch);
                 }
             }
@@ -76,6 +79,7 @@ public class cipher {
             String in = message.getText();
             int shifty = Integer.parseInt(num.getText());
             StringBuilder decrypted = new StringBuilder();
+
             for (int i = 0; i < in.length(); i++) {
                 char ch = in.charAt(i);
                 if (!Character.isWhitespace(ch)) {
@@ -89,12 +93,15 @@ public class cipher {
                         }
                         ch = (char) (temp + 65);
                         decrypted.append(ch);
-                    } else {
+                    } else if (Character.isLowerCase(ch)){
                         int temp = (ch - shifty - 97) % 26;
                         if (temp < 0) {
                             temp += 26;
                         }
                         ch = (char) (temp + 97);
+                        decrypted.append(ch);
+                    } else {
+                        ch = in.charAt(i);
                         decrypted.append(ch);
                     }
                 } else {
